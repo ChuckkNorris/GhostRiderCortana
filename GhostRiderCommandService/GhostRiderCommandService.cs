@@ -37,7 +37,7 @@ namespace GhostRider.VoiceCommands {
                     var workflowTiles = new List<VoiceCommandContentTile>() {
                         new VoiceCommandContentTile() {
                             ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText,
-                            Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Images/GreyTile.scale-100.png")),
+                            Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///GhostRider.VoiceCommands/Images/GreyTile.scale-100.png")),
                             Title = "Create New Page",
                             AppLaunchArgument = $"person={person}",
                             TextLine1 = "Creates a new basic page"
