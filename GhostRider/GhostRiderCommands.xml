@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="GhostRiderCommandSet_en-us">
+    <AppName> Ghost Rider </AppName>
+    <Example> Show notes for Jake </Example>
+
+    <Command Name="showNotesForPerson">
+      <Example> Show notes for Jake </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> show [my] notes for {person} </ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> show [my] {builtin:AppName} notes for {person} </ListenFor>
+      <Feedback> Getting available workflows {person} </Feedback>
+      <VoiceCommandService Target="GhostRiderCommandService"/>
+
+      <!--<Navigate />-->
+    </Command>
+
+    <Command Name="triggerWorkflow">
+      <Example> Trigger Workflow</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> trigger  workflow</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> what is the {builtin:AppName} favorite food for {person} </ListenFor>
+      <Feedback> Getting favorite food for </Feedback>
+      <VoiceCommandService Target="GhostRiderCommandService"/>
+    </Command>
+    <!--<VoiceCommandService Target="GhostRiderCommandService"/>-->
+    <!--<Command Name="cancelTripToDestination">
+      <Example> Cancel my trip to Las Vegas </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> cancel [my] trip to {destination}</ListenFor>
+      <ListenFor RequireAppName="ExplicitlySpecified"> cancel [my] {builtin:AppName} trip to {destination} </ListenFor>
+      <Feedback> Cancelling trip to {destination}</Feedback>
+      <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+    </Command>-->
+
+    <PhraseList Label="person">
+      <Item>Jake</Item>
+      <Item>Tom</Item>
+      <Item>Hank</Item>
+      <Item>Bethany Smith</Item>
+    </PhraseList>
+  </CommandSet>
+</VoiceCommands>
